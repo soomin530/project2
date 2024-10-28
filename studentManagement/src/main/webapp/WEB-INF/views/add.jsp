@@ -15,11 +15,11 @@
 
 	<form action="/student/add" method="post" id="addForm">
 		<div>
-			제목 : <input type="text" name="stdName" value="${student.stdName}">
+			제목 : <input type="text" name="stdName">
 		</div>
 
 		<div>
-			나이 : <input type="text" name="stdAge" value="${student.stdAge}">
+			나이 : <input type="text" name="stdAge">
 		</div>
 
 		<div>
@@ -35,15 +35,6 @@
 				type='checkbox' name='stdScore' value='F' />F
 		</div>
 
-		<%-- 성별, 성적은 기존 정보가 출력된 상태를 반영하지 못했습니다 --%>
-
-		<%-- studNo 도 수정 요청 시 파라미터로 보내기
-    	왜 필요하냐?
-    	어떤 studNo를 가진 행을 수정하고자 하는지
-    	SQL의 조건문에서 이용해야하기 때문이다.
-    --%>
-		<input type="hidden" name="studNo" value="${param.studNo}">
-		<!-- hidden : 화면상에 보이지 않게 함! -->
 
 		<button>추가</button>
 	</form>

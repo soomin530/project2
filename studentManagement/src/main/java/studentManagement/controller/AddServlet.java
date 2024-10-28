@@ -15,6 +15,20 @@ import studentManagement.service.StudMgmtServiceImpl;
 public class AddServlet extends HttpServlet {
 	
 	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
+			
+			// JSP 파일 경로 (webapp 폴더 기준으로 작성)
+			String path = "/WEB-INF/views/add.jsp";
+
+			// 요청 발송자를 이용해서 요청 위임
+			req.getRequestDispatcher(path).forward(req, resp);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {

@@ -24,8 +24,9 @@ public class UpdateServlet extends HttpServlet{
 			// 전달 받은 파라미터 얻어오기
 			int studNo = Integer.parseInt(req.getParameter("studNo"));
 			
-			// 수정 화면에는 기존의 내용이 채워져 있는 상태여야 한다!
-			// -> 수정 전 내용 조회 == 상세조회 서비스 재호출
+			// 수정 화면에는 기존의 제목, 상세내용이
+			// input, textarea에 채워져 있는 상태여야 한다!
+			// -> 수정 전 제목/내용 조회 == 상세조회 서비스 재호출
 			StudMgmtService service = new StudMgmtServiceImpl();
 			Student student = service.studDetailView(studNo);
 			

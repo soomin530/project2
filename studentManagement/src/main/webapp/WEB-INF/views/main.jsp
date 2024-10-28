@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>학생 관리 프로그램</title>
+<title> 학생 관리 프로그램 </title>
 
 <%-- css 파일 연결 (webapp 폴더 기준으로 경로 작성)--%>
 <link rel="stylesheet" href="/resources/css/main.css">
@@ -33,7 +33,7 @@
 					<th>${vs.current.studNo}</th>
 
 					<td>
-						<%-- 이름 클릭 시 그 학생 상세 조회하기
+						<%-- 이름 클릭 시 그 학생의 studList 요소 내용을 상세 조회하기
 							--%> <a href="/student/detail?studNo=${student.studNo}">${student.stdName}</a>
 					</td>
 
@@ -41,26 +41,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-
-	<div class="btn-container">
-		<div>
-			<button id="addBtn">학생 추가하기</button>
-		</div>
-	</div>
-
-	<%-- session에 message가 있다면 --%>
-	<c:if test="${not empty sessionScope.message}">
-		<script>
-			alert("${message}");
-		</script>
-
-		<c:remove var="message" scope="session" />
-
-	</c:if>
-
-
-	<script src="/resources/js/detail.js"></script>
-
 </body>
 </html>
 

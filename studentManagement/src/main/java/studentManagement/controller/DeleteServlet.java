@@ -34,17 +34,21 @@ public class DeleteServlet extends HttpServlet {
 						// 삭제 성공 시
 						if(result > 0) {
 						
-							session.setAttribute("message", "학생이 삭제되었습니다."); 
+							session.setAttribute("message", "할 일이 삭제되었습니다."); 
 							resp.sendRedirect("/");
 							return;
 						}
 						
 						
 						// 삭제 실패 시
-						session.setAttribute("message", "삭제에 실패하였습니다."); 
+						session.setAttribute("message", "todo가 존재하지 않습니다."); 
 						resp.sendRedirect("/");
 						
-
+						
+						// Controller 이름 : DeleteServlet o
+						// 삭제 성공 시 : "할 일이 삭제되었습니다" alert 창 띄우기 o
+						// 삭제 실패 시 : "todoNo가 존재하지 않습니다" alert 창 띄우기 o
+						// 성공/실패 메인페이지로 redirect o
 			
 		} catch (Exception e) {
 			e.printStackTrace();

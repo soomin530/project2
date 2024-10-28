@@ -29,8 +29,9 @@
     </div>
     
     <div>
-      성별 : <input type='checkbox' name='stdGender' value='female' />여성
-		    <input type='checkbox' name='stdGender' value='male' />남성
+      성별 : <input type="checkbox" name="stdGender" value="${student.stdGender}">  
+     	 	 <input type='checkbox' name='stdGender' value='female' />여성
+ 			 <input type='checkbox' name='stdGender' value='male' />남성
     </div>
     
     <div>
@@ -41,13 +42,15 @@
       		<input type='checkbox' name='stdScore' value='F' />F
     </div>
     
-    <%-- 성별, 성적은 기존 정보가 출력된 상태를 반영하지 못했습니다 --%>
     
     <%-- studNo 도 수정 요청 시 파라미터로 보내기
     	왜 필요하냐?
     	어떤 studNo를 가진 행을 수정하고자 하는지
     	SQL의 조건문에서 이용해야하기 때문이다.
-    --%>
+    	
+    	param. -> url(/student/update?studNo=10)에 있는 ?studNo=10
+    	EL 표현식에서 ${param.key} -> ${param.studNo} -> 10 이 반환
+     --%>
     <input type="hidden" name="studNo" value="${param.studNo}">
             <!-- hidden : 화면상에 보이지 않게 함! -->
     
